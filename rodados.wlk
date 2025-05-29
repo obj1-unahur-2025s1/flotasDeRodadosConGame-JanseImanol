@@ -4,7 +4,12 @@ class Corsa {
 
   method velociadaMax() = 150
   method capacidad() = 4
-  method peso() = 1300   
+  method peso() = 1300  
+  method initialize() {
+    if(not colores.validos().contains(color)){
+      self.error(color.toString() + " no es un color valido")
+    }
+  }
 
 }
 
@@ -30,8 +35,14 @@ object trafic {
 class Especial {
   var property peso = 0
   var property velociadMaxima = 0
-  var property color = "blanco"
+  var property color
   var property capacidad = 4
+
+  method initialize() {
+    if(not colores.validos().contains(color)){
+      self.error(color.toString() + " no es un color valido")
+    }
+  }
 }
 
 object comodo {
@@ -49,4 +60,8 @@ object pulenta {
 object bataton {
   method peso() = 500
   method velMax() = 80
+}
+
+object colores {
+  method validos() = #{"rojo","verde","azul","negro","beige","blanco"} 
 }

@@ -1,4 +1,6 @@
-import example.pepita
+import rodados.*
+import dependencia.*
+
 
 describe "group of tests for pepita" {
 
